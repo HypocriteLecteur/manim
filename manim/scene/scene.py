@@ -1005,7 +1005,7 @@ class Scene:
             times = [run_time]
         else:
             step = 1 / config["frame_rate"]
-            times = np.arange(0, run_time, step)
+            times = np.arange(0, round(run_time*config["frame_rate"]), 1) * step
         time_progression = tqdm(
             times,
             desc=description,
